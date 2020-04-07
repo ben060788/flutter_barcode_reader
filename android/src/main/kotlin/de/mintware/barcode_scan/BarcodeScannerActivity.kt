@@ -25,7 +25,7 @@ class BarcodeScannerActivity : Activity(), ZXingScannerView.ResultHandler {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title = ""
+        title = "請掃描條碼"
         scannerView = ZXingScannerView(this)
         scannerView.setAutoFocus(true)
         // this paramter will make your HUAWEI phone works great!
@@ -36,11 +36,11 @@ class BarcodeScannerActivity : Activity(), ZXingScannerView.ResultHandler {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         if (scannerView.flash) {
             val item = menu.add(0,
-                    TOGGLE_FLASH, 0, "Flash Off")
+                    TOGGLE_FLASH, 0, "關手電筒")
             item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS)
         } else {
             val item = menu.add(0,
-                    TOGGLE_FLASH, 0, "Flash On")
+                    TOGGLE_FLASH, 0, "開手電筒")
             item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS)
         }
         return super.onCreateOptionsMenu(menu)
